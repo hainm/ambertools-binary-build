@@ -6,6 +6,7 @@ if [ $osname = 'linux']; then
     yes | ./configure -noX11 -nofftw3 gnu
 else
     yes | ./configure -noX11 clang
+fi
 source amber.sh
 make install -j4
 cp $AMBERHOME/bin/* $PREFIX/bin/
