@@ -2,7 +2,7 @@ matrix:
   include:
     - { os: linux }
     - { os: osx }
-language: c
+language: cpp
 sudo: required
 services: docker
 install:
