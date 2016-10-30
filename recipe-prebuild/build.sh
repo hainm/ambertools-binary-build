@@ -5,7 +5,7 @@ export AMBERHOME=`pwd`
 if [ $osname = 'linux']; then
     yes | ./configure -noX11 -nofftw3 gnu
 else
-    yes | ./configure -noX11 clang
+    yes | ./configure -noX11 -macAccelerate clang
 fi
 source amber.sh
 make install -j4
