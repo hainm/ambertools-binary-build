@@ -2,8 +2,8 @@
 
 source scripts/download_AT16.sh
 tar -xf AmberTools16.tar.bz2 && cp -rf recipe-prebuild amber16/
-osname=`python -c "import sys; print(sys.platform)"`
-if [ $osname = 'linux' ]; then
+is_linux=`python -c "import sys; print('linux' in sys.platform)"`
+if [ $is_linux = 'True' ]; then
     source run_docker_build.sh
 else
     source run_oxs_build.sh

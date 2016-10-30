@@ -1,8 +1,8 @@
 #!/bin/sh
 
-osname=`python -c 'import sys; print(sys.platform)'`
+is_linux=`python -c "import sys; print('linux' in sys.platform)"`
 export AMBERHOME=`pwd`
-if [ $osname = 'linux']; then
+if [ $is_linux = 'True' ]; then
     yes | ./configure -noX11 -nofftw3 gnu
 else
     yes | ./configure -noX11 -macAccelerate clang
