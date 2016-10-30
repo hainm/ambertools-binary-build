@@ -1,7 +1,12 @@
 #!/bin/sh
 
+osname=`python -c 'import sys; print(sys.platform)'`
 export AMBERHOME=`pwd`
-yes | ./configure -noX11 gnu
+
+if [ $osname = 'linux']; then
+    yes | ./configure -noX11 gnu
+else
+    yes | ./configure -noX11 clang
 source amber.sh
 make install -j4
 cp $AMBERHOME/bin/* $PREFIX/bin/
