@@ -14,13 +14,13 @@ requirements:
   build:
     - zlib
     - bzip2
-    - gcc [unix]
-    - libgfortran [unix]
+    - gcc [linux]
+    - libgfortran [linux]
   run:
     - zlib
     - bzip2
-    - gcc [unix]
-    - libgfortran [unix]
+    - gcc [linux]
+    - libgfortran [linux]
     - numpy
 
 test:
