@@ -2,9 +2,8 @@
 
 osname=`python -c 'import sys; print(sys.platform)'`
 export AMBERHOME=`pwd`
-
 if [ $osname = 'linux']; then
-    yes | ./configure -noX11 gnu
+    yes | ./configure -noX11 -nofftw3 gnu
 else
     yes | ./configure -noX11 clang
 source amber.sh

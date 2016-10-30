@@ -4,14 +4,11 @@ machine:
 
 dependencies:
   override:
-    - docker pull condaforge/linux-anvil
+    - docker pull centos:5
 
 test:
   override:
-    - source scripts/install_git_lfs.sh
-    - tar -xf A.tar.bz2 && cp -rf recipe-prebuild amber16/
-    - source run_docker_build.sh
-    # - docker build -t ambermd/ambertools:16 .
+    - source setup.sh
   post:
     - mkdir $CIRCLE_ARTIFACTS/amber-build/
     - cp ambertools*bz2 $CIRCLE_ARTIFACTS/amber-build/
