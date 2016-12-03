@@ -23,7 +23,7 @@ install:
   - conda install -y zlib bzip2 libnetcdf
   - git clone https://github.com/amber-md/cpptraj
   - cd cpptraj
-  - bash configure --with-zlib=%PYTHON% --with-bzlib=%PYTHON% --with-netcdf=%PYTHON% -nomathlib gnu
+  - bash configure --with-zlib=%PYTHON% --with-bzlib=%PYTHON% --with-netcdf=%PYTHON% -nomathlib -nobzlib gnu
   - make
   # - python scripts/download_AmberTools.py
   # - tar -xf AmberTools16.tar.bz2
