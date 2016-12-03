@@ -2218,6 +2218,9 @@ else
     flibs_arch="$flibs_arch -lmc"
 fi
 
+# haichit debug
+c9xcomplex='skip'
+
 #--------------------------------------------------------------------------
 #  Support platforms without <sys/dir.h> but with <dirent.h>
 #  usually a non-Linux Unix with a non-native compiler.
