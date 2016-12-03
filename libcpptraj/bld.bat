@@ -1,3 +1,3 @@
 
-bash configure --with-zlib=%PYTHON% --with-bzlib=%PYTHON% --with-netcdf=%PYTHON% -nomathlib -nobzlib -nonetcdf -noreadline gnu
+bash configure --with-zlib=%PYTHON% --with-bzlib=%PYTHON% --with-netcdf=%PYTHON% -nomathlib -nobzlib -nonetcdf -noreadline -noxdrfile gnu
 mingw32-make install
