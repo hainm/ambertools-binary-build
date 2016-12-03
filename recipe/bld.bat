@@ -1,3 +1,7 @@
+where gcc.exe
+where make
+where mingw32-make
+where python
 set AMBERHOME=%cd%
 copy %RECIPE_DIR%\configure2 %AMBERHOME%\AmberTools\src\
 python update_amber --show-applied-patches
