@@ -2207,19 +2207,16 @@ fi
 #  Support platforms without a C <complex.h> by building c9x-complex.
 #--------------------------------------------------------------------------
 
-if [ -r /usr/include/complex.h ]; then
-    c9xcomplex='skip'
-elif [ "$cygwin" = 'yes' -o "$windows" = 'yes' ]; then
-    c9xcomplex='skip'
-else
-    c9xcomplex='libmc.a'
-    cflags="$cflags -DUSE_AMBER_C9XCOMPLEX"
-    pmemd_coptflags="$pmemd_coptflags -DUSE_AMBER_C9XCOMPLEX"
-    flibs_arch="$flibs_arch -lmc"
-fi
-
-# haichit debug
-c9xcomplex='skip'
+# if [ -r /usr/include/complex.h ]; then
+#     c9xcomplex='skip'
+# elif [ "$cygwin" = 'yes' -o "$windows" = 'yes' ]; then
+#     c9xcomplex='skip'
+# else
+#     c9xcomplex='libmc.a'
+#     cflags="$cflags -DUSE_AMBER_C9XCOMPLEX"
+#     pmemd_coptflags="$pmemd_coptflags -DUSE_AMBER_C9XCOMPLEX"
+#     flibs_arch="$flibs_arch -lmc"
+# fi
 
 #--------------------------------------------------------------------------
 #  Support platforms without <sys/dir.h> but with <dirent.h>
