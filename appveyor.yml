@@ -20,7 +20,7 @@ install:
   - set PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
   - conda config --add channels conda-forge
   - conda install -c conda-forge mingwpy -y
-  - bash scripts/download_AmberTools.sh
+  - python scripts/download_AmberTools.py
   - tar -xf AmberTools16.tar.bz2
   - cd amber16
   - yes | bash configure -noX11 gnu
