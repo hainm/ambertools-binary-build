@@ -20,12 +20,16 @@ install:
   - set PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
   - conda config --add channels conda-forge
   - conda install -c conda-forge mingwpy -y
-  - python scripts/download_AmberTools.py
-  - tar -xf AmberTools16.tar.bz2
-  - cd amber16
-  - yes | bash configure -noX11 gnu
-  - source amber.sh
-  - make install
+  - git clone https://github.com/amber-md/cpptraj
+  - cd cpptraj
+  - bash configure gnu
+  - make
+  # - python scripts/download_AmberTools.py
+  # - tar -xf AmberTools16.tar.bz2
+  # - cd amber16
+  # - yes | bash configure -noX11 gnu
+  # - source amber.sh
+  # - make install
 
 build: false
 
