@@ -20,9 +20,10 @@ install:
   - set PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
   - conda config --add channels conda-forge
   - conda install -c conda-forge mingwpy -y
+  - conda install -y zlib bzip2 libnetcdf
   - git clone https://github.com/amber-md/cpptraj
   - cd cpptraj
-  - bash configure gnu
+  - bash configure --with-zlib=%PYTHON% --with-bzlib=%PYTHON% --with-netcdf=%PYTHON% -nomathlib gnu
   - make
   # - python scripts/download_AmberTools.py
   # - tar -xf AmberTools16.tar.bz2
