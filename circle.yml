@@ -17,6 +17,7 @@ test:
         1) 
           export AMBER_BUILD_TASK="ambertools" && source build.sh ;; esac:
           parallel: true
+
   post:
     - mkdir $CIRCLE_ARTIFACTS/amber-build/
     - cp amber*bz2 $CIRCLE_ARTIFACTS/amber-build/
