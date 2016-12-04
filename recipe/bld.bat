@@ -2,6 +2,7 @@ set CC=gcc.exe
 set CXX=g++.exe 
 set FC=gfortran.exe
 
+where mingw32-make
 set AMBERHOME=%cd%
 copy %RECIPE_DIR%\configure .
 python update_amber --show-applied-patches
