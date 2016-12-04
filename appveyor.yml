@@ -16,6 +16,8 @@ environment:
     #   ARCH: "64"
 
 install:
+  - git clone https://github.com/choderalab/ambermini
+  - copy ambermini\\configure recipe\
   - set PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
   - conda config --add channels conda-forge
   - conda update conda -y
