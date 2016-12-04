@@ -9,6 +9,14 @@ dependencies:
 test:
   override:
     - source build.sh
+test:
+  override:
+      - case $CIRCLE_NODE_INDEX in 
+        0)
+          export AMBER_BUILD_TASK="ambermini" && source build.sh ;;
+        1) 
+          export AMBER_BUILD_TASK="ambertools" && source build.sh ;; esac:
+          parallel: true
   post:
     - mkdir $CIRCLE_ARTIFACTS/amber-build/
     - cp amber*bz2 $CIRCLE_ARTIFACTS/amber-build/
