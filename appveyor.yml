@@ -28,5 +28,5 @@ install:
 
 build: false
 
-test_script:
-  - "%CMD_IN_ENV% conda build recipe"
+# test_script:
+#   - "%CMD_IN_ENV% conda build recipe"
