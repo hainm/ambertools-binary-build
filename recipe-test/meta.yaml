@@ -1,0 +1,25 @@
+package:
+  name: test
+  version: "0.0"
+
+source:
+  path : .
+
+build:
+  number: 1
+
+requirements:
+  build:
+    - zlib
+    - bzip2
+    - python [not win]
+    - mingwpy [win]
+  run:
+    - zlib
+    - bzip2
+    - python
+
+about:
+    home: https://ambermd.org
+    license: GNU General Public License (GPL)
+    summary: AmberTools is a set of programs for biomolecular simulation and analysis.
