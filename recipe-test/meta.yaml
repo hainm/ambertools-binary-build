@@ -1,0 +1,9 @@
+# Please update your name and other info if you maintain or update this recipe
+package:
+  name: test
+  version: "0.0"
+
+about:
+    home: test
+    license: test
+    summary: test
