@@ -3,9 +3,10 @@ machine:
     - docker
 dependencies:
   override:
-    - docker pull ambermd/amber-build-box
-test:
-  override:
-    - python scripts/circleci_build.py
-  post:
-    - python scripts/circleci_upload.py
+    # - docker pull ambermd/amber-build-box
+    - bash ./scripts/download_AmberTools.sh
+# test:
+#   override:
+#     - python scripts/circleci_build.py
+#   post:
+#     - python scripts/circleci_upload.py
