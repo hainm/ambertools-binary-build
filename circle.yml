@@ -2,9 +2,11 @@ machine:
   services:
     - docker
 dependencies:
+  cache_directory:
+    - "amber16"
   override:
     # - docker pull ambermd/amber-build-box
-    - bash ./scripts/download_AmberTools.sh
+    - if [ ! -d amber16 ]; then bash ./scripts/download_AmberTools.sh; fi
 # test:
 #   override:
 #     - python scripts/circleci_build.py
