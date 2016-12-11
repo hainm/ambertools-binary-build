@@ -29,19 +29,14 @@ install:
       mingw-w64-x86_64-readline
       mingw-w64-x86_64-python2-numpy
       tcsh
+      make
       diffutils
     \""
-  - set PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
-  - conda config --add channels conda-forge
-  - conda update conda -y
-  - conda update --all -y
-  - conda install conda-build -y
-  - conda create -n py27 python=2.7 -y
-  - activate py27
-  - python -c "import sys; print(sys.prefix)"
-  - where python
-  - python --version
-  - conda build recipe --py 2.7
+  - appveyor DownloadFile https://dl.dropboxusercontent.com/u/5494759/AmberTools16.tar.bz2 -FileName AmberTools16.tar.bz2
+  - tar -xf AmberTools16.tar.bz2
+  - cd amber16
+  - "bash -lc \"configure -noX11 -windows gnu\""
+  - make -j2
 
 build: false
 
