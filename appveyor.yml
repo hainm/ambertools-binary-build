@@ -34,17 +34,17 @@ install:
       appveyor DownloadFile https://dl.dropboxusercontent.com/u/5494759/AmberTools16.tar.bz2 -FileName AmberTools16.tar.bz2 &
       python -c "import tarfile; fh = tarfile.open('AmberTools16.tar.bz2'); fh.extractall(); fh.close()"
     )
-  - cd amber16
-  - set AMBERHOME=%cd%
-  - ls .
-  - where python
-  - where g++
-  - where gfortran
-  - where gcc
-  - "sh -lc \"../install_netcdf.sh\""
-  - ls /usr/local/include/
-  - echo n | sh configure -noX11 --with-python C:/msys64/mingw64/bin/python.exe --with-netcdf /usr/local gnu
-  - make -j2
+#   - cd amber16
+#   - set AMBERHOME=%cd%
+#   - ls .
+#   - where python
+#   - where g++
+#   - where gfortran
+#   - where gcc
+#   - "sh -lc \"../install_netcdf.sh\""
+#   - ls /usr/local/include/
+#   - echo n | sh configure -noX11 --with-python C:/msys64/mingw64/bin/python.exe --with-netcdf /usr/local gnu
+#   - make -j2
 
 build_script:
   - echo "hello"
