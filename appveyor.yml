@@ -54,4 +54,3 @@ build_script:
 
 test_script:
   - echo "hello"
-  # - "%CMD_IN_ENV% conda build recipe"
