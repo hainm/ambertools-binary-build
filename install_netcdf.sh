@@ -9,6 +9,8 @@ cd $AMBERHOME/AmberTools/src/netcdf-fortran-4.2
 export LD_LIBRARY_PATH="$AMBERHOME/lib:$LD_LIBRARY_PATH"
 echo "\tConfiguring NetCDF Fortran interface (may be time-consuming)...\n"
 make clean
+NFDIR=/usr/local
+CPPFLAGS=-I${NCDIR}/include LDFLAGS=-L${NCDIR}/lib \
 sh configure \
               LDFLAGS="-L$AMBERHOME/lib" \
               CPPFLAGS="-I$AMBERHOME/include" \
