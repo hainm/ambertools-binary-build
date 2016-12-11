@@ -2,7 +2,7 @@ machine:
   services:
     - docker
 dependencies:
-  cache_directory:
+  cache_directories:
     - "amber16"
   override:
     # - docker pull ambermd/amber-build-box
