@@ -7,13 +7,7 @@ environment:
     PYTHONUNBUFFERED: 1
   matrix:
     - PYTHON: "C:\\Miniconda3"
-      CONDA_PY: "35"
-      CONDA_NPY: "1.10"
-
-    # - PYTHON: "C:\\Miniconda3-x64"
-    #   CONDA_PY: "35"
-    #   CONDA_NPY: "1.10"
-    #   ARCH: "64"
+      CONDA_PY: "27"
 
 cache:
   - amber16
@@ -22,6 +16,7 @@ install:
   - set HOME=.
   - set MSYSTEM=MINGW64
   - ls C:/msys64/mingw64/lib/
+  - ls C:/msys64/mingw64/bin/
   - set PATH=C:/msys64/usr/bin;C:/msys64/mingw64/bin;%PATH%
   - "sh -lc \"pacman -S --noconfirm --needed
       mingw-w64-x86_64-openblas
@@ -43,6 +38,9 @@ install:
   - set AMBERHOME=%cd%
   - ls .
   - where python
+  - where g++
+  - where gfortran
+  - where gcc
   - "sh -lc \"../install_netcdf.sh\""
   - ls /usr/local/include/
   - echo n | sh configure -noX11 --with-python C:/msys64/mingw64/bin/python.exe --with-netcdf /usr/local gnu
