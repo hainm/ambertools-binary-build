@@ -38,7 +38,7 @@ install:
   - if not exist AmberTools16.tar.bz (
       appveyor DownloadFile https://dl.dropboxusercontent.com/u/5494759/AmberTools16.tar.bz2 -FileName AmberTools16.tar.bz2
     )
-  - tar -xf AmberTools16.tar.bz2
+  - tar -xf AmberTools16.tar.bz2 --ignore-failed-read
   - cd amber16
   - "bash -lc \"configure -noX11 -windows gnu\""
   - make -j2
