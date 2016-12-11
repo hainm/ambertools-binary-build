@@ -4,7 +4,7 @@ sh configure --enable-static --disable-netcdf-4 --prefix=/usr/local --disable-da
 make install
 
 # fortran
-cd $AMBERHOME/AmberTools/netcdf-fortran-4.2
+cd $AMBERHOME/AmberTools/src/netcdf-fortran-4.2
 # The NetCDF Fortran config script will need access to the C library.
 export LD_LIBRARY_PATH="$AMBERHOME/lib:$LD_LIBRARY_PATH"
 echo "\tConfiguring NetCDF Fortran interface (may be time-consuming)...\n"
