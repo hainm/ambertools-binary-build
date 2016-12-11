@@ -43,7 +43,7 @@ install:
   - set AMBERHOME=%cd%
   - ls .
   - where python
-  # - echo n | sh configure -noX11 -windows --with-python C:/msys64/mingw64/bin/python.exe gnu
+  - sh install_netcdf.sh
   - echo n | sh configure -noX11 --with-python C:/msys64/mingw64/bin/python.exe gnu
   - make -j2
 
