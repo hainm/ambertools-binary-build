@@ -16,7 +16,7 @@ Build AmberTools with conda and docker. This is beta version.
 ```bash
     conda install -c http://ambermd.org/conda/ ambertools=16
 
-    # current working version with python=3.5
+    # current working version with python=2.7 and 3.5
     conda install -c hainm ambertools=16
 
     # search
@@ -45,7 +45,12 @@ Build AmberTools with conda and docker. This is beta version.
 
     - by conda
     ```bash
-    conda build recipe
+    # build ambermini
+    conda build recipe --py 2.7
+
+    # build full ambertools
+    export AMBER_BUILD_TASK=ambertools
+    conda build recipe --py 2.7
     ```
 
  - How continuous integration services are being used?
