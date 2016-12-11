@@ -7,8 +7,9 @@ dependencies:
   override:
     # - docker pull ambermd/amber-build-box
     - if [ ! -d amber16 ]; then bash ./scripts/download_AmberTools.sh; fi
-# test:
-#   override:
+test:
+  override:
+    - echo "hello"
 #     - python scripts/circleci_build.py
 #   post:
 #     - python scripts/circleci_upload.py
