@@ -40,7 +40,8 @@ install:
       python -c "import tarfile; fh = tarfile.open('AmberTools16.tar.bz2'); fh.extractall(); fh.close()"
     )
   - cd amber16
-  - "bash -lc \"configure -noX11 -windows gnu\""
+  - ls .
+  - sh configure -noX11 -windows gnu
   - make -j2
 
 build: false
