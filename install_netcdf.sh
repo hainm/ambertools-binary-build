@@ -8,9 +8,8 @@ cd $AMBERHOME/AmberTools/src/netcdf-fortran-4.2
 # The NetCDF Fortran config script will need access to the C library.
 export LD_LIBRARY_PATH="$AMBERHOME/lib:$LD_LIBRARY_PATH"
 echo "\tConfiguring NetCDF Fortran interface (may be time-consuming)...\n"
-NFDIR=/usr/local/
-export CPPFLAGS=-I${NCDIR}/include
-export LDFLAGS=-L${NCDIR}/lib
+export CPPFLAGS=-I/usr/local/include
+export LDFLAGS=-L/usr/local/lib
 echo $CPPFLAGS $LDFLAGS
 sh configure --disable-shared --prefix=/usr/local
 make install
