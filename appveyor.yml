@@ -16,7 +16,7 @@ environment:
     #   ARCH: "64"
 
 cache:
-  - AmberTools16.tar.bz2
+  - amber16
 
 install:
   - set HOME=.
@@ -36,10 +36,9 @@ install:
       diffutils
     \""
   - if not exist AmberTools16.tar.bz (
-      appveyor DownloadFile https://dl.dropboxusercontent.com/u/5494759/AmberTools16.tar.bz2 -FileName AmberTools16.tar.bz2
+      appveyor DownloadFile https://dl.dropboxusercontent.com/u/5494759/AmberTools16.tar.bz2 -FileName AmberTools16.tar.bz2 &
+      python -c "import tarfile; fh = tarfile.open('AmberTools16.tar.bz2'); fh.extractall(); fh.close()"
     )
-  - python -c "import tarfile; fh = tarfile.open('AmberTools16.tar.bz2'); fh.extractall(); fh.close()"
-  # - tar -xf AmberTools16.tar.bz2 --ignore-failed-read
   - cd amber16
   - "bash -lc \"configure -noX11 -windows gnu\""
   - make -j2
