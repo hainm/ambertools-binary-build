@@ -44,7 +44,7 @@ install:
   # - sh configure -noX11 -windows gnu
   # - make -j2
 
-build:
+build_script:
   - echo "hello"
 
 test_script:
