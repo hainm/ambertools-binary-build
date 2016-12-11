@@ -41,10 +41,12 @@ install:
     )
   - cd amber16
   - ls .
-  - sh configure -noX11 -windows gnu
-  - make -j2
+  # - sh configure -noX11 -windows gnu
+  # - make -j2
 
-build: false
+build:
+  - echo "hello"
 
 test_script:
-  - "%CMD_IN_ENV% conda build recipe"
+  - echo "hello"
+  # - "%CMD_IN_ENV% conda build recipe"
