@@ -35,18 +35,6 @@ install:
       make
       diffutils
     \""
-  - "sh -lc \"
-     if [ ! -f /usr/local/lib/libnetcdf.a ]; then
-       curl -fsS -o netcdf-4.3.3.zip ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-4.3.3.zip &&
-       7z x netcdf-4.3.3.zip -o$APPVEYOR_BUILD_FOLDER > /dev/null &&
-       cd $APPVEYOR_BUILD_FOLDER/netcdf-4.3.3 &&
-       exec 0</dev/null &&
-       ./configure --enable-static --disable-netcdf-4 --prefix=/usr/local/ --disable-dap &&
-       make -r install;
-     else
-       echo 'Have Cached NetCDF';
-     fi
-  \""
   - if not exist amber16 (
       appveyor DownloadFile https://dl.dropboxusercontent.com/u/5494759/AmberTools16.tar.bz2 -FileName AmberTools16.tar.bz2 &
       python -c "import tarfile; fh = tarfile.open('AmberTools16.tar.bz2'); fh.extractall(); fh.close()"
@@ -55,8 +43,8 @@ install:
   - set AMBERHOME=%cd%
   - ls .
   - where python
-  # - sh ../install_netcdf.sh
-  - echo n | sh configure -noX11 --with-python C:/msys64/mingw64/bin/python.exe --with-netcdf /usr/local/ gnu
+  - "sh -lc \"../install_netcdf.sh\""
+  - echo n | sh configure -noX11 --with-python C:/msys64/mingw64/bin/python.exe gnu
   - make -j2
 
 build_script:
