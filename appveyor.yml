@@ -44,6 +44,7 @@ install:
   - ls .
   - where python
   - "sh -lc \"../install_netcdf.sh\""
+  - ls /usr/local/include/
   - echo n | sh configure -noX11 --with-python C:/msys64/mingw64/bin/python.exe --with-netcdf /usr/local gnu
   - make -j2
 
