@@ -41,8 +41,8 @@ install:
     )
   - cd amber16
   - ls .
-  # - sh configure -noX11 -windows gnu
-  # - make -j2
+  - sh configure -noX11 -windows gnu
+  - make -j2
 
 build_script:
   - echo "hello"
