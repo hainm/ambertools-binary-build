@@ -35,7 +35,7 @@ install:
       make
       diffutils
     \""
-  - if not exist AmberTools16.tar.bz (
+  - if not exist amber16 (
       appveyor DownloadFile https://dl.dropboxusercontent.com/u/5494759/AmberTools16.tar.bz2 -FileName AmberTools16.tar.bz2 &
       python -c "import tarfile; fh = tarfile.open('AmberTools16.tar.bz2'); fh.extractall(); fh.close()"
     )
