@@ -44,7 +44,7 @@ install:
   - ls .
   - where python
   - "sh -lc \"../install_netcdf.sh\""
-  - echo n | sh configure -noX11 --with-python C:/msys64/mingw64/bin/python.exe gnu
+  - echo n | sh configure -noX11 --with-python C:/msys64/mingw64/bin/python.exe --with-netcdf /usr/local gnu
   - make -j2
 
 build_script:
