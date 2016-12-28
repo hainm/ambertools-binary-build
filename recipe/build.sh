@@ -48,12 +48,9 @@ if [ ${build_task} == 'ambertools' ]; then
 fi
 
 # copy DOC
-mkdir $PREFIX/doc/
-cp $AMBERHOME/doc/Amber*.pdf $PREFIX/doc
-
-# make test: add me
-if [ ${build_task} == 'ambermini' ]; then
-    sh $RECIPE_DIR/run_test_inside_amberhome.sh
+if [ -f $AMBERHOME/doc/Amber17.pdf ]; then
+    mkdir $PREFIX/doc/
+    cp $AMBERHOME/doc/Amber*.pdf $PREFIX/doc
 fi
 
 # registration
