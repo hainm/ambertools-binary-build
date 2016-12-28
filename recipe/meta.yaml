@@ -1,8 +1,17 @@
-# Please update your name and other info if you maintain or update this recipe
-{% set ambertools_url = "http://ambermd.org/cgi-bin/AmberTools16-get.pl?Name=HaiNguyen&Institution=Rutgers&City=NewBrunswicks&State=NJ&Country=USA" %}
-{% set version = "16" %}
-{% set bugfix_version = "20" %} # applied update.1  to update.{{bugfix_version}}
-{% set build_number = "2" %} # e.g: add Amber16.pdf, add some library (xleap)
+{% if os.getenv('LOCAL_AMBERTOOLS', "") %}
+    # e.g:
+    # - export LOCAL_AMBERTOOLS="file:///home/haichit/AmberTools16.tar.bz2"
+    # - export LOCAL_AMBERTOOLS="/home/haichit/amber16/"
+    {% set ambertools_url = os.getenv('LOCAL_AMBERTOOLS') %}
+{% else %}
+    # Please update your name and other info if you maintain or update this recipe
+    # {% set ambertools_url = "http://ambermd.org/cgi-bin/AmberTools16-get.pl?Name=HaiNguyen&Institution=Rutgers&City=NewBrunswicks&State=NJ&Country=USA" %}
+    {% set ambertools_url = "https://dl.dropboxusercontent.com/u/5494759/at17.28dec16.tar.bz2" %}
+{% endif %}
+
+{% set version = "17" %}
+{% set bugfix_version = "0" %} # applied update.1  to update.{{bugfix_version}}
+{% set build_number = "1" %} # e.g: add Amber16.pdf, add some library (xleap)
 {% set ambertools_version = version + '.' + bugfix_version + '.' + build_number %}
 {% set ambertools_fn = "AmberTools" + version + ".tar.bz2" %}
 
@@ -23,15 +32,11 @@ source:
   fn : {{ ambertools_fn }}
   url : {{ ambertools_url }}
   
-  # Un-comment if using local path, must use file:/// if using tar file
-  # url : file:///home/haichit/AmberTools16.tar.bz2
-  # or
-  # url : /home/haichit/amber16/
-
 build:
   number: {{ build_number }}
   script_env:
     - AMBER_BUILD_TASK
+    - LOCAL_AMBERTOOLS
 
 requirements:
   build:

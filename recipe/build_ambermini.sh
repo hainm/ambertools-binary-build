@@ -10,3 +10,6 @@ echo ${AMBERHOME}
 (cd ${AMBERHOME}/AmberTools/src/antechamber && make install)
 (cd ${AMBERHOME}/AmberTools/src/reduce && make install)
 (cd ${AMBERHOME}/AmberTools/src/paramfit && make install)
+
+# Ambertools >= 17
+# (cd ${AMBERHOME}/AmberTools/src/ && make ambermini)
