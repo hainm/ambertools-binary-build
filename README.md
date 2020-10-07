@@ -1,3 +1,4 @@
+NOTE: this repo is deprecated. conda-forge is used now. 
 - Build AmberTools conda
 ```
 # Assume you have amber source code in $HOME/amber
